@@ -12,11 +12,11 @@
         .logo
           %h1= link_to "hundred", root_path
         .user_actions
-          = link_to "Sign In"
+          = link_to "Sign In", "#"
           = link_to "Sign Up", "#", class: "button"
         .clearfix
       #content.section.line
-        .inner_content.outline
+        .inner_content
           = yield
           &nbsp;
         .clearfix
