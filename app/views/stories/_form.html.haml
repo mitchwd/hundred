@@ -14,3 +14,16 @@
     = f.submit 'share', class: 'button'
     %p.disclaimer
       * We promise to never sell your story. Your story will always be yours.
+      
+:javascript
+  $(function() {
+    $('#story_content').miniCount({
+      max: 100,
+      unit: 'word',
+      countdown: true,
+      text: 'words remaining...',
+      textPosition: 'after',
+      invalidText: 'words remaining.',
+      counterPosition: 'before'
+    });
+  });
