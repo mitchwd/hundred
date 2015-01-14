@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* Floats */
+.left { float: left; }
+.right { float: right; }
+.clearfix { clear: both; }
+
+.outline { outline: 1px solid red; }
+
+body {
+  font-family: "Open Sans";
+  font-weight: 100;
+  color: #333233;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: #50A7C7;
+  }
+}
+
+.button {
+  border: 1px solid #9B9B9B;
+  padding: .7rem 1.25rem;
+  margin: 15px;
+  border-radius: .3em;
+  outline: none;
+  background: white;
+}
+
+.container {
+
+}
+
+.section {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.line {
+  clear: both;
+  border-bottom: 1px solid #E4E4E4;
+}
+
+header.section {
+  margin-top: 15px;
+  .logo {
+    float: left;
+  }
+  .user_actions {
+    float: right;
+    padding-top: 2rem;
+  }
+}
+
+#content .inner_content {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+footer {
+  font-size: .8em;
+}

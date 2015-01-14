@@ -4,6 +4,23 @@
     %title Hundred
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %link{:rel => "stylesheet", :href => "http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css"}
     = csrf_meta_tags
   %body
-    = yield
+    .container
+      %header.section.line
+        .logo
+          %h1= link_to "hundred", root_path
+        .user_actions
+          = link_to "Sign In"
+          = link_to "Sign Up", "#", class: "button"
+        .clearfix
+      #content.section.line
+        .inner_content.outline
+          = yield
+          &nbsp;
+        .clearfix
+      %footer.section
+        %p 
+          created by 
+          = link_to "@mitchwd", "http://www.twitter.com/mitchwd"
