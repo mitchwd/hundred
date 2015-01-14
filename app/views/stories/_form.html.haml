@@ -7,7 +7,10 @@
           %li= msg
 
   .field
-    = f.label :content
+    %h2 Hello, my name is <span class="highlight">___________</span> and this is my story...
     = f.text_area :content
+    %h2.ending The End.
   .actions
-    = f.submit 'Save'
+    = f.submit 'share', class: 'button'
+    %p.disclaimer
+      * We promise to never sell your story. Your story will always be yours.

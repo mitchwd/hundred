@@ -1,9 +1,7 @@
 %p#notice= notice
 
-%p
-  %b Content:
-  = @story.content
+%h2.intro Hello, my name is <span class="highlight">___________</span> and this is my story...
+%p.story_content= @story.content
+%h2.ending The End.
 
-= link_to 'Edit', edit_story_path(@story)
-\|
-= link_to 'Back', stories_path
+= link_to 'Back', stories_path, class: 'button'

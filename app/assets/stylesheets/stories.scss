@@ -1,3 +1,57 @@
 // Place all the styles related to the Stories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+  width: 100%;
+  text-align: left;
+  tr {
+    height: 3em;
+    &:nth-child(even) {
+      background: #F8F8F8;
+    }
+  }
+}
+
+h2 {
+  text-align: left;
+}
+
+.story_content {
+  text-align: left;
+  width: 90%;
+  margin: 40px auto;
+}
+
+.ending {
+  text-align: right;
+}
+
+p.disclaimer {
+  font-size: .8em;
+}
+
+// Form
+
+textarea#story_content {
+  width: 98%; // Lines up the counter nicely.
+  height: 180px;
+  border: 1px solid #CCC;
+  padding: 5px;
+}
+
+.counter {
+  text-align: right;
+  font-size: 12px;
+}
+
+input.button {
+  &:hover {
+    color: #50A7C7;
+  }
+}
+
+// Change the word counter to red if word limit is exceeded.
+.error {
+  color: red;
+}
