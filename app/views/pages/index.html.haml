@@ -1,0 +1,19 @@
+%h1 
+  Our stories don't need to be <span class="highlight">complex</span>,
+  %br 
+  they need to be <span class="highlight">clear</span>.
+  %h3.action= link_to "Share your story", new_story_path, class: "button"
+  %br/
+.line
+
+#latest_posts
+  %h3 Here's some of our latest stories:
+  %h5
+    %table
+      %tbody
+        - @latest_stories.each do |story|
+          %tr
+            %td= link_to truncate(story.content, length: 85), story
+            %td= time_ago_in_words(story.created_at) + " ago"
+
+  %h5.action= link_to "read more stories", stories_path, class: "button"

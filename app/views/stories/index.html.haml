@@ -1,0 +1,11 @@
+%h2 Latest stories
+
+%table
+  %tbody
+    - @stories.each do |story|
+      %tr
+        %td= link_to truncate(story.content, length: 65), story
+        %td= time_ago_in_words(story.created_at) + " ago"
+%br
+
+= link_to 'New Story', new_story_path, class: 'button'
