@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show', to: 'users#show'
+
   get 'sessions/create'
 
   resources :stories

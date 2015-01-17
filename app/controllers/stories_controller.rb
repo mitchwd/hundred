@@ -1,5 +1,8 @@
 class StoriesController < ApplicationController
-  before_action :set_story, only: [:show, :edit, :update, :destroy]
+
+  before_filter :authenticate_user!, except: [:index, :show]
+  before_action :set_story, only: [:show, :edit, :update, :destroy] # Must load before correct_author? is called.
+  before_filter :correct_author?, only: [:edit, :update, :destroy]
 
   # GET /stories
   # GET /stories.json
@@ -19,12 +22,16 @@ class StoriesController < ApplicationController
 
   # GET /stories/1/edit
   def edit
+    unless current_user == @story.user
+      redirect_to root_url, :alert => "Access denied."
+    end
   end
 
   # POST /stories
   # POST /stories.json
   def create
     @story = Story.new(story_params)
+    @story.user = User.find(current_user)
 
     respond_to do |format|
       if @story.save
@@ -71,4 +78,11 @@ class StoriesController < ApplicationController
     def story_params
       params.require(:story).permit(:content)
     end
+
+    def correct_author?
+      unless current_user == @story.user
+        redirect_to root_url, :alert => "Access denied. You cannot alter someone else's story."
+      end
+    end
+
 end
