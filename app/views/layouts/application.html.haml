@@ -12,8 +12,11 @@
         .logo
           %h1= link_to "hundred", root_path
         .user_actions
-          = link_to "Sign In", "#"
-          = link_to "Sign Up", "#", class: "button"
+          - if user_signed_in?
+            = link_to current_user.name, user_show_path
+            = link_to "Sign Out", signout_path, class: "button"
+          - else
+            = link_to "Sign In with Facebook", signin_path
         .clearfix
       #content.section.line
         .inner_content
