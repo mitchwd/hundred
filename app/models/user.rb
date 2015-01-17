@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :stories
+  has_many :stories, dependent: :destroy
 
   def self.create_with_omniauth(auth)
     create! do |user|

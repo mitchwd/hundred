@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/show', to: 'users#show'
+  get 'user/show', to: 'users#show'
+  delete 'user/destroy', to: 'users#destroy'
 
   get 'sessions/create'
 
