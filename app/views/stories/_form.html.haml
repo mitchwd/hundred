@@ -5,9 +5,8 @@
       %ul
         - @story.errors.full_messages.each do |msg|
           %li= msg
-
+  
   .field
-    %h2 Hello, my name is <span class="highlight">___________</span> and this is my story...
     = f.text_area :content
     %h2.ending The End.
   .actions

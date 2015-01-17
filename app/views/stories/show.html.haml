@@ -1,6 +1,9 @@
 %p#notice= notice
 
-%h2.intro Hello, my name is <span class="highlight">___________</span> and this is my story...
+%h2.intro 
+  Hello, my name is 
+  %span.highlight= @story.user.name 
+  and this is my story...
 %p.story_content= @story.content
 %h2.ending The End.
 

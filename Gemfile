@@ -34,6 +34,9 @@ gem 'haml-rails'
 gem 'unicorn'
 gem 'rack-timeout'
 
+# Authentication
+gem 'omniauth-facebook'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
