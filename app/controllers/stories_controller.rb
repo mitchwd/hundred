@@ -81,7 +81,7 @@ class StoriesController < ApplicationController
 
     def correct_author?
       unless current_user == @story.user
-        redirect_to root_url, :alert => "Access denied. You cannot alter someone else's story."
+        redirect_to root_url, :error => "Access denied. You cannot alter someone else's story."
       end
     end
 
