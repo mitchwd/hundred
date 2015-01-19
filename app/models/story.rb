@@ -1,8 +1,12 @@
 class Story < ActiveRecord::Base
+  require 'obscenity/active_model'
+
   belongs_to :user
 
   validates_presence_of :user # Also validates associated record existence
-  validates_length_of :content, :maximum => 100, :message => "must be less than (or exactly) 100 words", :tokenizer => lambda {|str| str.squish.split.size}
-  validates_presence_of :content, :message => "can't be blank"
-  validates_uniqueness_of :content, :message => "has already been shared"
+  validates :content, 
+    presence: true,
+    obscenity: { sanitize: true },
+    uniqueness: { message: "has already been shared" },
+    word_count: { min: 100, max: 100, message: "must be exactly 100 words. (Currently %{actual_count}/100)" }
 end

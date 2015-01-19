@@ -1,0 +1,7 @@
+##hundred
+
+Our stories don't need to be **complex**, they need to be **clear**. Share yours here.
+
+Test server: [hundrd.herokuapp.com](http://hundrd.herokuapp.com/)
+
+Created by [@mitchwd](http://www.twitter.com/mitchwd)

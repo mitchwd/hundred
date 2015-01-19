@@ -19,6 +19,9 @@
             = link_to "Sign In with Facebook", signin_path
         .clearfix
       #content.section.line
+        .flash
+          - flash.each do |name, msg|
+            = content_tag :div, msg, class: name
         .inner_content
           = yield
           &nbsp;
