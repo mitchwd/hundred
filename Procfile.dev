@@ -1,0 +1,2 @@
+web: bundle exec unicorn -p $PORT -E development -c ./config/unicorn.rb
+db: postgres -D ~/Library/Application\ Support/Postgres/var-9.4
